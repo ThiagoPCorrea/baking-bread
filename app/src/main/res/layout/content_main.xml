@@ -12,22 +12,21 @@
         android:id="@+id/filter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="7dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/orange"
         android:fontFamily="cursive"
         android:text="Filtro"
         android:textColor="@color/white"
         android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/SearchText"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/SearchText"
-        android:layout_width="275dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="Pesquisa"
@@ -38,15 +37,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="525dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SearchText">
+
+        <include layout="@layout/activity_tab"></include>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

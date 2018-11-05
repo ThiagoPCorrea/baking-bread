@@ -24,5 +24,11 @@
     <string name="login">Login</string>
     <string name="title">Bem Vindo</string>
     <string name="title_activity_filter">FilterActivity</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="tab_text_1">Principal</string>
+    <string name="tab_text_2">Novos</string>
+    <string name="tab_text_3">Recomendados</string>
+    <string name="tab_text_4">Favoritos</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 </resources>

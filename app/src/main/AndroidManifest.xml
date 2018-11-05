@@ -30,6 +30,10 @@
         <activity
             android:name=".FilterActivity"
             android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TabActivity"
+            android:label="@string/title_activity_tab"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
