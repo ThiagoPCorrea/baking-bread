@@ -46,7 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SearchText">
 
-        <include layout="@layout/activity_tab"></include>
+        <include layout="@layout/activity_tab"/>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
