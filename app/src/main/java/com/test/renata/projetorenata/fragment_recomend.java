@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class frag_recomend extends Fragment {
+public class fragment_recomend extends Fragment {
 
 
-    public frag_recomend() {
+    public fragment_recomend() {
         // Required empty public constructor
     }
 

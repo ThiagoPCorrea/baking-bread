@@ -10,7 +10,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label=""
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -31,10 +31,6 @@
             android:name=".FilterActivity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".TabActivity"
-            android:label="@string/title_activity_tab"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
