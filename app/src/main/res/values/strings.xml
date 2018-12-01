@@ -32,5 +32,10 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_card_view_tab">CardView_tab</string>
 
+    <!-- Strings related to cardView_tab-->
+    <string name="Right_Card_button">Right_Card_button</string>
+    <string name="Left_Card_button">Left_Card_button</string>
+    <string name="Card_Image">Card_Image</string>
 </resources>

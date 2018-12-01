@@ -1,10 +1,12 @@
 package com.test.renata.projetorenata;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -22,6 +24,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.MotionEvent;
 
@@ -31,8 +35,9 @@ import java.util.ArrayList;
 public class Main extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private ArrayList<View> v = new ArrayList<>();
+    private static Context MainContext;
 
-//Activity_tab
+    //Activity_tab
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -42,7 +47,6 @@ public class Main extends AppCompatActivity
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private Main.SectionsPagerAdapter mSectionsPagerAdapter;
-
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -53,16 +57,9 @@ public class Main extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        MainContext = this;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarmain);
         setSupportActionBar(toolbar);
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
         Button filtro = (Button) findViewById(R.id.filter);
         filtro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,39 +68,31 @@ public class Main extends AppCompatActivity
                 startActivity(i);
             }
         });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setCheckedItem(R.id.menutext);
         v.add(findViewById(R.id.menu));
         navigationView.setNavigationItemSelectedListener(this);
-
-
         //Tab Activity
         mSectionsPagerAdapter = new Main.SectionsPagerAdapter(getSupportFragmentManager());
-
-        // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+        ////////////////////////////////////////////////////////////
+
+
         mViewPager.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 return true;
             }
-        }
-        );
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout) {
         });
-        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
-
-
     }
 
     @Override
@@ -230,47 +219,64 @@ public class Main extends AppCompatActivity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_card_view_tab, container, false);
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 1){
-                View rootView = inflater.inflate(R.layout.fragment_principal, container, false);
+                TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
+                textPrincipal.setText("principal");
                 return rootView;
             }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2){
-                View rootView = inflater.inflate(R.layout.fragment_new, container, false);
+                final ImageView teste = rootView.findViewById(R.id.Card_image);
+                teste.setImageResource(R.drawable.loginbg);
+                CardView food = rootView.findViewById(R.id.cardView);
+                food.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(MainContext,FilterActivity.class);
+                        startActivity(i);
+                    }
+                });
+                ImageButton b = rootView.findViewById(R.id.rightCardbutton);
+                b.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+                TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
+                textPrincipal.setText("New");
                 return rootView;
             }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 3){
-                View rootView = inflater.inflate(R.layout.fragment_recomend, container, false);
+                TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
+                textPrincipal.setText("Recomendado");
                 return rootView;
             }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 4){
-                View rootView = inflater.inflate(R.layout.fragment_favorite, container, false);
-                return rootView;
-            }else{
-                View rootView = inflater.inflate(R.layout.fragment_content, container, false);
-                TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-                textView.setText(getString(R.string.section_format,getArguments().getInt(ARG_SECTION_NUMBER)));
+                TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
+                textPrincipal.setText("Favoritos");
                 return rootView;
             }
+            return rootView;
         }
     }
 
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+        /**
+         * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
+         * one of the sections/tabs/pages.
+         */
+        public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
+            public SectionsPagerAdapter(FragmentManager fm) {
+                super(fm);
+            }
 
-        @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return Main.PlaceholderFragment.newInstance(position + 1);
-        }
+            @Override
+            public Fragment getItem(int position) {
+                return Main.PlaceholderFragment.newInstance(position + 1);
+            }
 
-        @Override
-        public int getCount() {
-            return 4;
+            @Override
+            public int getCount() {
+                return 4;
+            }
         }
-    }
+        ///////////////////////////////////////
 }

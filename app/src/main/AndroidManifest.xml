@@ -31,6 +31,10 @@
             android:name=".FilterActivity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CardView_tab"
+            android:label="@string/title_activity_card_view_tab"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
