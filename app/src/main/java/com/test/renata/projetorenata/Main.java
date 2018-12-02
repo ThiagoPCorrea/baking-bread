@@ -231,8 +231,8 @@ public class Main extends AppCompatActivity
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent(MainContext,FilterActivity.class);
-                        //startActivity(i);
+                        Intent i = new Intent(MainContext,ComidaActivity.class);
+                        startActivity(i);
                     }
                 });
                 ImageButton rightButton = rootView.findViewById(R.id.rightCardbutton);
@@ -263,7 +263,7 @@ public class Main extends AppCompatActivity
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent(MainContext,FilterActivity.class);
+                        //Intent i = new Intent(MainContext,ComidaActivity.class);
                         //startActivity(i);
                     }
                 });

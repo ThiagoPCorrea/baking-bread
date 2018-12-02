@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ComidaActivity"
+    tools:showIn="@layout/activity_comida">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_ingredientes_logo"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:text="Ingredientes"
+            android:textAlignment="center"
+            android:textColor="@color/orange"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="-> Massa:\n\n
+- 3 cenouras médias raladas\n\n
+- 1/2 xícara (chá) de óleo\n\n
+- 4 ovos\n\n
+- 2 e 1/2 xícaras (chá) de farinha de trigo\n\n
+- 1 colher (sopa) de fermento em pó\n\n
+- 2 xícaras (chá) de açúcar\n\n
+-> Cobertura:\n\n
+- 1 colher (sopa) de manteiga\n\n
+- 3 colheres (sopa) de chocolate em pó\n\n
+- 1 xícara (chá) de açúcar\n\//n
+- 1 xícara (chá) de leite\n\n"
+            android:textColor="@color/lightorange"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/text_ingredientes_logo"
+            app:layout_constraintStart_toStartOf="@+id/text_ingredientes_logo"
+            app:layout_constraintTop_toBottomOf="@+id/text_ingredientes_logo" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Modo de Preparo"
+            android:textAlignment="center"
+            android:textColor="@color/orange"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
+            app:layout_constraintEnd_toEndOf="@+id/textView5"
+            app:layout_constraintStart_toStartOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="-> Massa:\n\n
+- 1: Em um liquidificador, adicione a cenoura, os ovos e o óleo, depois misture\n\n
+- 2: Acrescente o açúcar e bata novamente por 5 minutos\n\n
+- 3: Em uma tigela ou na batedeira, adicione a farinha de trigo e depois misture novamente\n\n
+- 4: Acrescente o fermento e misture lentamente com uma colher\n\n
+- 5: Asse em um forno preaquecido a 180° C por aproximadamente 40 minutos\n\n
+-> Cobertura:\n\n
+- 1: Despeje em uma tigela a manteiga, o chocolate em pó, o açúcar e o leite, depois misture\n\n
+- 2: Leve a mistura ao fogo e continue misturando até obter uma consistência cremosa, depois despeje a calda por cima do bolo\n\n"
+            android:textColor="@color/lightorange"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView6"
+            app:layout_constraintStart_toStartOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>
