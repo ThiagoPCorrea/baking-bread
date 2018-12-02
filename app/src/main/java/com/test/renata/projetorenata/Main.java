@@ -2,8 +2,6 @@ package com.test.renata.projetorenata;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v7.widget.CardView;
@@ -142,13 +140,13 @@ public class Main extends AppCompatActivity
             addNewLayout(R.id.profile, R.id.toolbarprofile);
         } else if (id == R.id.menutext) {
             addNewLayout(R.id.menu, R.id.toolbarmain);
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+//        } else if (id == R.id.nav_slideshow) {
+//
+//        } else if (id == R.id.nav_manage) {
+//
+//        } else if (id == R.id.nav_share) {
+//
+//        } else if (id == R.id.nav_send) {
 
         }
 
@@ -221,37 +219,132 @@ public class Main extends AppCompatActivity
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_card_view_tab, container, false);
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 1){
+                ImageView image = rootView.findViewById(R.id.Card_image);
+                image.setImageResource(R.drawable.bolo_de_cenoura);
                 TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
-                textPrincipal.setText("principal");
-                return rootView;
-            }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2){
-                final ImageView teste = rootView.findViewById(R.id.Card_image);
-                teste.setImageResource(R.drawable.loginbg);
+                textPrincipal.setText("Bolo de Cenoura");
+                TextView textCategoria = rootView.findViewById(R.id.Card_NomeCategoria);
+                textCategoria.setText("Doce");
+                TextView textTime = rootView.findViewById(R.id.Card_TempoPreparo);
+                textTime.setText("2 Horas");
                 CardView food = rootView.findViewById(R.id.cardView);
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent i = new Intent(MainContext,FilterActivity.class);
-                        startActivity(i);
+                        //startActivity(i);
                     }
                 });
-                ImageButton b = rootView.findViewById(R.id.rightCardbutton);
-                b.setOnClickListener(new View.OnClickListener() {
+                ImageButton rightButton = rootView.findViewById(R.id.rightCardbutton);
+                rightButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
                     }
                 });
+                ImageButton leftButton = rootView.findViewById(R.id.leftCardbutton);
+                leftButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+                return rootView;
+            }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2){
+                ImageView image = rootView.findViewById(R.id.Card_image);
+                image.setImageResource(R.drawable.coxinha);
                 TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
-                textPrincipal.setText("New");
+                textPrincipal.setText("Coxinha de Frango");
+                TextView textCategoria = rootView.findViewById(R.id.Card_NomeCategoria);
+                textCategoria.setText("Salgado");
+                TextView textTime = rootView.findViewById(R.id.Card_TempoPreparo);
+                textTime.setText("3 Horas");
+                CardView food = rootView.findViewById(R.id.cardView);
+                food.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(MainContext,FilterActivity.class);
+                        //startActivity(i);
+                    }
+                });
+                ImageButton rightButton = rootView.findViewById(R.id.rightCardbutton);
+                rightButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+                ImageButton leftButton = rootView.findViewById(R.id.leftCardbutton);
+                leftButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
                 return rootView;
             }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 3){
+                ImageView image = rootView.findViewById(R.id.Card_image);
+                image.setImageResource(R.drawable.panqueca_de_frango);
                 TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
-                textPrincipal.setText("Recomendado");
+                textPrincipal.setText("Panqueca de Frango");
+                TextView textCategoria = rootView.findViewById(R.id.Card_NomeCategoria);
+                textCategoria.setText("Salgado");
+                TextView textTime = rootView.findViewById(R.id.Card_TempoPreparo);
+                textTime.setText("50 Minutos");
+                CardView food = rootView.findViewById(R.id.cardView);
+                food.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(MainContext,FilterActivity.class);
+                        //startActivity(i);
+                    }
+                });
+                ImageButton rightButton = rootView.findViewById(R.id.rightCardbutton);
+                rightButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+                ImageButton leftButton = rootView.findViewById(R.id.leftCardbutton);
+                leftButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
                 return rootView;
             }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 4){
+                ImageView image = rootView.findViewById(R.id.Card_image);
+                image.setImageResource(R.drawable.torta_holandesa);
                 TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
-                textPrincipal.setText("Favoritos");
+                textPrincipal.setText("Torta Holandesa");
+                TextView textCategoria = rootView.findViewById(R.id.Card_NomeCategoria);
+                textCategoria.setText("Doce");
+                TextView textTime = rootView.findViewById(R.id.Card_TempoPreparo);
+                textTime.setText("2 Horas");
+                CardView food = rootView.findViewById(R.id.cardView);
+                food.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(MainContext,FilterActivity.class);
+                        //startActivity(i);
+                    }
+                });
+                ImageButton rightButton = rootView.findViewById(R.id.rightCardbutton);
+                rightButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+                ImageButton leftButton = rootView.findViewById(R.id.leftCardbutton);
+                leftButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
                 return rootView;
             }
             return rootView;
