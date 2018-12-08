@@ -38,6 +38,10 @@
         <activity
             android:name=".ComidaActivity"
             android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".profile_tab_Activity"
+            android:label="@string/title_activity_profile_tab_"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

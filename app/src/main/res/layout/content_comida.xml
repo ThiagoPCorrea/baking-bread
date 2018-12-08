@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cream"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ComidaActivity"
     tools:showIn="@layout/activity_comida">
@@ -19,6 +20,7 @@
             android:text="Ingredientes"
             android:textAlignment="center"
             android:textColor="@color/orange"
+            android:fontFamily="cursive"
             android:textSize="25sp"
             app:layout_constraintBottom_toTopOf="@+id/textView5"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,6 +31,7 @@
             android:id="@+id/textView5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fontFamily="cursive"
             android:text="-> Massa:\n\n
 - 3 cenouras médias raladas\n\n
 - 1/2 xícara (chá) de óleo\n\n
@@ -42,7 +45,7 @@
 - 1 xícara (chá) de açúcar\n\n
 - 1 xícara (chá) de leite\n\n"
             android:textColor="@color/lightorange"
-            android:textSize="18sp"
+            android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="@+id/text_ingredientes_logo"
             app:layout_constraintStart_toStartOf="@+id/text_ingredientes_logo"
             app:layout_constraintTop_toBottomOf="@+id/text_ingredientes_logo" />
@@ -54,6 +57,7 @@
             android:text="Modo de Preparo"
             android:textAlignment="center"
             android:textColor="@color/orange"
+            android:fontFamily="cursive"
             android:textSize="25sp"
             app:layout_constraintBottom_toTopOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="@+id/textView5"
@@ -74,7 +78,8 @@
 - 1: Despeje em uma tigela a manteiga, o chocolate em pó, o açúcar e o leite, depois misture\n\n
 - 2: Leve a mistura ao fogo e continue misturando até obter uma consistência cremosa, depois despeje a calda por cima do bolo\n\n"
             android:textColor="@color/lightorange"
-            android:textSize="18sp"
+            android:textSize="22sp"
+            android:fontFamily="cursive"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView6"
             app:layout_constraintStart_toStartOf="@+id/textView6"

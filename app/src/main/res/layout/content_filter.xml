@@ -4,8 +4,171 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cream"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".FilterActivity"
     tools:showIn="@layout/activity_filter">
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView_filter_label"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/filter_label"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/checkBox_filter_doce"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_filter_doce"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/checkbox_doce"
+                    app:layout_constraintBottom_toTopOf="@+id/checkBox_filter_sucos"
+                    app:layout_constraintEnd_toStartOf="@+id/checkBox_filter_salgado"
+                    app:layout_constraintHorizontal_bias="0.51"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_filter_salgado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/checkbox_salgado"
+                    app:layout_constraintBottom_toBottomOf="@+id/checkBox_filter_doce"
+                    app:layout_constraintEnd_toStartOf="@+id/checkBox_filter_massas"
+                    app:layout_constraintStart_toEndOf="@+id/checkBox_filter_doce"
+                    app:layout_constraintTop_toTopOf="@+id/checkBox_filter_doce" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_filter_massas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/checkbox_massas"
+                    app:layout_constraintBottom_toBottomOf="@+id/checkBox_filter_salgado"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/checkBox_filter_salgado"
+                    app:layout_constraintTop_toTopOf="@+id/checkBox_filter_salgado" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_filter_sucos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/checkbox_sucos"
+                    app:layout_constraintEnd_toEndOf="@+id/checkBox_filter_doce"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox_filter_doce"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBox_filter_doce" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_filter_lanches"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checkbox_lanches"
+                    app:layout_constraintBottom_toBottomOf="@+id/checkBox_filter_sucos"
+                    app:layout_constraintEnd_toEndOf="@+id/checkBox_filter_salgado"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox_filter_salgado"
+                    app:layout_constraintTop_toTopOf="@+id/checkBox_filter_sucos" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_filter_vegetariana"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checkbox_vegetariana"
+                    app:layout_constraintBottom_toBottomOf="@+id/checkBox_filter_lanches"
+                    app:layout_constraintEnd_toEndOf="@+id/checkBox_filter_massas"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox_filter_massas"
+                    app:layout_constraintTop_toTopOf="@+id/checkBox_filter_lanches" />
+            </android.support.constraint.ConstraintLayout>
+        </ScrollView>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+        <Button
+            android:id="@+id/button_filter_limparFiltros"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/clean_filter"
+            android:backgroundTint="@color/gray"
+            android:textColor="#bfbfbf"
+            android:fontFamily="cursive"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_filter_confirm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_filter_confirm"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/confirm_filter"
+            android:backgroundTint="@color/orange"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fontFamily="cursive"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_filter_limparFiltros"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>
