@@ -5,7 +5,7 @@
     android:id="@+id/profile_constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profile_tab_Activity$PlaceholderFragment"
+    tools:context=".profile_tab_Activity$PlaceholderFragment_profile"
     tools:layout_editor_absoluteY="81dp">
 
     <android.support.constraint.ConstraintLayout

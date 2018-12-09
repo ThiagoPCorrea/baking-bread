@@ -49,6 +49,10 @@ public class Main extends AppCompatActivity
      */
     private ViewPager mViewPager;
 ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////
+    //Profile Pager//
+    private SectionsPagerAdapter_profile mSectionsPagerAdapter_profile;
+    private ViewPager mViewPager_profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,15 +85,26 @@ public class Main extends AppCompatActivity
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
-        ////////////////////////////////////////////////////////////
-
-
         mViewPager.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 return true;
             }
         });
+        ///////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////
+        //Profile Pager//
+        mSectionsPagerAdapter_profile = new SectionsPagerAdapter_profile(getSupportFragmentManager());
+
+        // Set up the ViewPager with the sections adapter.
+        mViewPager_profile = (ViewPager) findViewById(R.id.container_profile);
+        mViewPager_profile.setAdapter(mSectionsPagerAdapter_profile);
+
+        TabLayout tabLayout_profile = (TabLayout) findViewById(R.id.tabs_profile);
+
+        mViewPager_profile.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout_profile));
+        tabLayout_profile.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager_profile));
+        ////////////////////////////////////////////
     }
 
     @Override
@@ -370,5 +385,69 @@ public class Main extends AppCompatActivity
                 return 4;
             }
         }
-        ///////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////
+    //profile pager
+        public static class PlaceholderFragment_profile extends Fragment {
+            /**
+             * The fragment argument representing the section number for this
+             * fragment.
+             */
+            private static final String ARG_SECTION_NUMBER_profile = "section_number";
+
+            public PlaceholderFragment_profile() {
+            }
+
+            /**
+             * Returns a new instance of this fragment for the given section
+             * number.
+             */
+            public static PlaceholderFragment_profile newInstance(int sectionNumber) {
+                PlaceholderFragment_profile fragment = new PlaceholderFragment_profile();
+                Bundle args = new Bundle();
+                args.putInt(ARG_SECTION_NUMBER_profile, sectionNumber);
+                fragment.setArguments(args);
+                return fragment;
+            }
+
+            @Override
+            public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                     Bundle savedInstanceState) {
+                View rootView = inflater.inflate(R.layout.fragment_profile_tab, container, false);
+                CardView food = rootView.findViewById(R.id.profile_cardView);
+                food.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(MainContext,ComidaActivity.class);
+                        startActivity(i);
+                    }
+                });
+                return rootView;
+            }
+        }
+
+    /**
+     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
+     * one of the sections/tabs/pages.
+     */
+    public class SectionsPagerAdapter_profile extends FragmentPagerAdapter {
+
+        public SectionsPagerAdapter_profile(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            // getItem is called to instantiate the fragment for the given page.
+            // Return a PlaceholderFragment (defined as a static inner class below).
+            return PlaceholderFragment_profile.newInstance(position + 1);
+        }
+
+        @Override
+        public int getCount() {
+            // Show 3 total pages.
+            return 1;
+        }
+    }
 }

@@ -5,7 +5,7 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Adicionar Receita</string>
     <string name="nome_user">Nome</string>
     <string name="test_email">test@email.com</string>
     <string name="title_activity_login">Sign in</string>
@@ -53,6 +53,6 @@
     <string name="title_activity_profile_tab_">profile_tab_Activity</string>
 
     <!--Profile Tab-->
-    <string name="tab_text_profile">Suas Receitas</string>
+    <string name="tab_text_profile">Minhas Receitas</string>
 
 </resources>
