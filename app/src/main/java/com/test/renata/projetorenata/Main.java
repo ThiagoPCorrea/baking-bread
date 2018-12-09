@@ -3,6 +3,7 @@ package com.test.renata.projetorenata;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v7.widget.CardView;
 import android.view.View;
@@ -38,7 +39,12 @@ import circList.CircularLinkedList;
 public class Main extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private ArrayList<View> v = new ArrayList<>();
-    private static CircularLinkedList<Receita> receita;
+    //private static CircularLinkedList<Receita> receita;
+    private static CircularLinkedList<Receita> receitaprincipal;
+    private static CircularLinkedList<Receita> receitanew;
+    private static CircularLinkedList<Receita> receitarecomend;
+    private static CircularLinkedList<Receita> receitafavorita;
+    private static CircularLinkedList<Receita> receitayour;
     private static Context MainContext;
 
     //Activity_tab
@@ -111,7 +117,14 @@ public class Main extends AppCompatActivity
 
         mViewPager_profile.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout_profile));
         tabLayout_profile.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager_profile));
-        ////////////////////////////////////////////
+        /////////////////////////////////////////////
+        ///listas receitas///
+        receitaprincipal = ListaInstance.init1();
+        receitanew = ListaInstance.init2();
+        receitarecomend = ListaInstance.init3();
+        receitafavorita = ListaInstance.init4();
+        receitayour = ListaInstance.init5();
+        /////////////////////////////
     }
 
     @Override
@@ -211,6 +224,29 @@ public class Main extends AppCompatActivity
         toggle.syncState();
     }
 
+    public static void UpdateCard(CircularLinkedList<Receita> receita, View rootView,boolean profile ){
+        if(!profile){
+            ImageView image = rootView.findViewById(R.id.Card_image);
+            image.setImageResource(R.drawable.bolo_de_cenoura);
+            TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
+            textPrincipal.setText(receita.element().getNome());
+            TextView textCategoria = rootView.findViewById(R.id.Card_NomeCategoria);
+            textCategoria.setText(receita.element().getCategoria());
+            TextView textTime = rootView.findViewById(R.id.Card_TempoPreparo);
+            textTime.setText(receita.element().getTempo());
+        }else{
+            ImageView image = rootView.findViewById(R.id.profile_Card_image);
+            image.setImageResource(R.drawable.bolo_de_cenoura);
+            TextView textPrincipal = rootView.findViewById(R.id.profile_Card_text_NomeComida);
+            textPrincipal.setText(receita.element().getNome());
+            TextView textCategoria = rootView.findViewById(R.id.profile_Card_NomeCategoria);
+            textCategoria.setText(receita.element().getCategoria());
+            TextView textTime = rootView.findViewById(R.id.profile_Card_TempoPreparo);
+            textTime.setText(receita.element().getTempo());
+        }
+        
+    }
+
 
     //Activity_tab
     public static class PlaceholderFragment extends Fragment {
@@ -238,19 +274,11 @@ public class Main extends AppCompatActivity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_card_view_tab, container, false);
+            final View rootView = inflater.inflate(R.layout.fragment_card_view_tab, container, false);
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 1){
 
-                receita = ListaInstance.init1();
-
-                ImageView image = rootView.findViewById(R.id.Card_image);
-                image.setImageResource(R.drawable.bolo_de_cenoura);
-                TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
-                textPrincipal.setText(receita.element().getNome());
-                TextView textCategoria = rootView.findViewById(R.id.Card_NomeCategoria);
-                textCategoria.setText(receita.element().getCategoria());
-                TextView textTime = rootView.findViewById(R.id.Card_TempoPreparo);
-                textTime.setText(receita.element().getTempo());
+                //receita = ListaInstance.init1();
+                UpdateCard(receitaprincipal,rootView,false);
                 CardView food = rootView.findViewById(R.id.cardView);
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -263,30 +291,27 @@ public class Main extends AppCompatActivity
                 rightButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        receita.next(receita.element());
+                        Receita aux = receitaprincipal.remove();
+                        receitaprincipal.add(aux);
+                        UpdateCard(receitaprincipal,rootView,false);
                     }
                 });
                 ImageButton leftButton = rootView.findViewById(R.id.leftCardbutton);
                 leftButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        receita.prev(receita.element());
+                        Receita aux = receitaprincipal.removeLast();
+                        receitaprincipal.addFirst(aux);
+                        UpdateCard(receitaprincipal,rootView,false);
                     }
                 });
                 return rootView;
             }
             else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2){
 
-                receita = ListaInstance.init2();
+                //receita = ListaInstance.init2();
 
-                ImageView image = rootView.findViewById(R.id.Card_image);
-                image.setImageResource(R.drawable.coxinha);
-                TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
-                textPrincipal.setText(receita.element().getNome());
-                TextView textCategoria = rootView.findViewById(R.id.Card_NomeCategoria);
-                textCategoria.setText(receita.element().getCategoria());
-                TextView textTime = rootView.findViewById(R.id.Card_TempoPreparo);
-                textTime.setText(receita.element().getTempo());
+                UpdateCard(receitanew,rootView,false);
                 CardView food = rootView.findViewById(R.id.cardView);
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -299,29 +324,26 @@ public class Main extends AppCompatActivity
                 rightButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        receita.next(receita.element());
+                        Receita aux = receitanew.remove();
+                        receitanew.add(aux);
+                        UpdateCard(receitanew,rootView,false);
                     }
                 });
                 ImageButton leftButton = rootView.findViewById(R.id.leftCardbutton);
                 leftButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        receita.prev(receita.element());
+                        Receita aux = receitanew.removeLast();
+                        receitanew.addFirst(aux);
+                        UpdateCard(receitanew,rootView,false);
                     }
                 });
                 return rootView;
             }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 3){
 
-                receita = ListaInstance.init3();
+                //receita = ListaInstance.init3();
 
-                ImageView image = rootView.findViewById(R.id.Card_image);
-                image.setImageResource(R.drawable.panqueca_de_frango);
-                TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
-                textPrincipal.setText(receita.element().getNome());
-                TextView textCategoria = rootView.findViewById(R.id.Card_NomeCategoria);
-                textCategoria.setText(receita.element().getCategoria());
-                TextView textTime = rootView.findViewById(R.id.Card_TempoPreparo);
-                textTime.setText(receita.element().getTempo());
+                UpdateCard(receitarecomend,rootView,false);
                 CardView food = rootView.findViewById(R.id.cardView);
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -334,29 +356,26 @@ public class Main extends AppCompatActivity
                 rightButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        receita.next(receita.element());
+                        Receita aux = receitarecomend.remove();
+                        receitarecomend.add(aux);
+                        UpdateCard(receitarecomend,rootView,false);
                     }
                 });
                 ImageButton leftButton = rootView.findViewById(R.id.leftCardbutton);
                 leftButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        receita.prev(receita.element());
+                        Receita aux = receitarecomend.removeLast();
+                        receitarecomend.addFirst(aux);
+                        UpdateCard(receitarecomend,rootView,false);
                     }
                 });
                 return rootView;
             }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 4){
 
-                receita = ListaInstance.init4();
+                //receita = ListaInstance.init4();
 
-                ImageView image = rootView.findViewById(R.id.Card_image);
-                image.setImageResource(R.drawable.torta_holandesa);
-                TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
-                textPrincipal.setText(receita.element().getNome());
-                TextView textCategoria = rootView.findViewById(R.id.Card_NomeCategoria);
-                textCategoria.setText(receita.element().getCategoria());
-                TextView textTime = rootView.findViewById(R.id.Card_TempoPreparo);
-                textTime.setText(receita.element().getTempo());
+                UpdateCard(receitafavorita,rootView,false);
                 CardView food = rootView.findViewById(R.id.cardView);
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -369,14 +388,18 @@ public class Main extends AppCompatActivity
                 rightButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        receita.next(receita.element());
+                        Receita aux = receitafavorita.remove();
+                        receitafavorita.add(aux);
+                        UpdateCard(receitafavorita,rootView,false);
                     }
                 });
                 ImageButton leftButton = rootView.findViewById(R.id.leftCardbutton);
                 leftButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        receita.prev(receita.element());
+                        Receita aux = receitafavorita.removeLast();
+                        receitafavorita.addFirst(aux);
+                        UpdateCard(receitafavorita,rootView,false);
                     }
                 });
                 return rootView;
@@ -434,18 +457,11 @@ public class Main extends AppCompatActivity
             @Override
             public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                      Bundle savedInstanceState) {
-                View rootView = inflater.inflate(R.layout.fragment_profile_tab, container, false);
+                final View rootView = inflater.inflate(R.layout.fragment_profile_tab, container, false);
 
-                receita = ListaInstance.init5();
+                //receita = ListaInstance.init5();
 
-                ImageView image = rootView.findViewById(R.id.profile_Card_image);
-                image.setImageResource(R.drawable.bolo_de_cenoura);
-                TextView textPrincipal = rootView.findViewById(R.id.profile_Card_text_NomeComida);
-                textPrincipal.setText(receita.element().getNome());
-                TextView textCategoria = rootView.findViewById(R.id.profile_Card_NomeCategoria);
-                textCategoria.setText(receita.element().getCategoria());
-                TextView textTime = rootView.findViewById(R.id.profile_Card_TempoPreparo);
-                textTime.setText(receita.element().getTempo());
+                UpdateCard(receitayour,rootView,true);
 
                 CardView food = rootView.findViewById(R.id.profile_cardView);
                 food.setOnClickListener(new View.OnClickListener() {
@@ -455,18 +471,22 @@ public class Main extends AppCompatActivity
                         startActivity(i);
                     }
                 });
-                ImageButton rightButton = rootView.findViewById(R.id.rightCardbutton);
+                ImageButton rightButton = rootView.findViewById(R.id.profile_rightCardbutton);
                 rightButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        receita.next(receita.element());
+                        Receita aux = receitayour.remove();
+                        receitayour.add(aux);
+                        UpdateCard(receitayour,rootView,true);
                     }
                 });
-                ImageButton leftButton = rootView.findViewById(R.id.leftCardbutton);
+                ImageButton leftButton = rootView.findViewById(R.id.profile_leftCardbutton);
                 leftButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        receita.prev(receita.element());
+                        Receita aux = receitayour.removeLast();
+                        receitayour.addFirst(aux);
+                        UpdateCard(receitayour,rootView,true);
                     }
                 });
                 return rootView;

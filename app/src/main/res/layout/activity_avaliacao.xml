@@ -94,6 +94,7 @@
                 android:backgroundTint="@color/orange"
                 android:fontFamily="cursive"
                 android:text="@string/button_avaliar"
+                android:textColor="@color/gray"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
