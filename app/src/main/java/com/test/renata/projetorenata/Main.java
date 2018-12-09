@@ -26,6 +26,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.MotionEvent;
 
+import circList.CircularLinkedList;
+import circList.ListaInstance;
+import elementos.Receita;
+
 
 import java.util.ArrayList;
 
@@ -34,6 +38,7 @@ import circList.CircularLinkedList;
 public class Main extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private ArrayList<View> v = new ArrayList<>();
+    private static CircularLinkedList<Receita> receita;
     private static Context MainContext;
 
     //Activity_tab
@@ -235,14 +240,17 @@ public class Main extends AppCompatActivity
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_card_view_tab, container, false);
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 1){
+
+                receita = ListaInstance.init1();
+
                 ImageView image = rootView.findViewById(R.id.Card_image);
                 image.setImageResource(R.drawable.bolo_de_cenoura);
                 TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
-                textPrincipal.setText("Bolo de Cenoura");
+                textPrincipal.setText(receita.element().getNome());
                 TextView textCategoria = rootView.findViewById(R.id.Card_NomeCategoria);
-                textCategoria.setText("Doce");
+                textCategoria.setText(receita.element().getCategoria());
                 TextView textTime = rootView.findViewById(R.id.Card_TempoPreparo);
-                textTime.setText("2 Horas");
+                textTime.setText(receita.element().getTempo());
                 CardView food = rootView.findViewById(R.id.cardView);
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -266,15 +274,19 @@ public class Main extends AppCompatActivity
                     }
                 });
                 return rootView;
-            }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2){
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2){
+
+                receita = ListaInstance.init2();
+
                 ImageView image = rootView.findViewById(R.id.Card_image);
                 image.setImageResource(R.drawable.coxinha);
                 TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
-                textPrincipal.setText("Coxinha de Frango");
+                textPrincipal.setText(receita.element().getNome());
                 TextView textCategoria = rootView.findViewById(R.id.Card_NomeCategoria);
-                textCategoria.setText("Salgado");
+                textCategoria.setText(receita.element().getCategoria());
                 TextView textTime = rootView.findViewById(R.id.Card_TempoPreparo);
-                textTime.setText("3 Horas");
+                textTime.setText(receita.element().getTempo());
                 CardView food = rootView.findViewById(R.id.cardView);
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -299,14 +311,17 @@ public class Main extends AppCompatActivity
                 });
                 return rootView;
             }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 3){
+
+                receita = ListaInstance.init3();
+
                 ImageView image = rootView.findViewById(R.id.Card_image);
                 image.setImageResource(R.drawable.panqueca_de_frango);
                 TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
-                textPrincipal.setText("Panqueca de Frango");
+                textPrincipal.setText(receita.element().getNome());
                 TextView textCategoria = rootView.findViewById(R.id.Card_NomeCategoria);
-                textCategoria.setText("Salgado");
+                textCategoria.setText(receita.element().getCategoria());
                 TextView textTime = rootView.findViewById(R.id.Card_TempoPreparo);
-                textTime.setText("50 Minutos");
+                textTime.setText(receita.element().getTempo());
                 CardView food = rootView.findViewById(R.id.cardView);
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -331,14 +346,17 @@ public class Main extends AppCompatActivity
                 });
                 return rootView;
             }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 4){
+
+                receita = ListaInstance.init4();
+
                 ImageView image = rootView.findViewById(R.id.Card_image);
                 image.setImageResource(R.drawable.torta_holandesa);
                 TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
-                textPrincipal.setText("Torta Holandesa");
+                textPrincipal.setText(receita.element().getNome());
                 TextView textCategoria = rootView.findViewById(R.id.Card_NomeCategoria);
-                textCategoria.setText("Doce");
+                textCategoria.setText(receita.element().getCategoria());
                 TextView textTime = rootView.findViewById(R.id.Card_TempoPreparo);
-                textTime.setText("2 Horas");
+                textTime.setText(receita.element().getTempo());
                 CardView food = rootView.findViewById(R.id.cardView);
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -417,6 +435,18 @@ public class Main extends AppCompatActivity
             public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                      Bundle savedInstanceState) {
                 View rootView = inflater.inflate(R.layout.fragment_profile_tab, container, false);
+
+                receita = ListaInstance.init5();
+
+                ImageView image = rootView.findViewById(R.id.profile_Card_image);
+                image.setImageResource(R.drawable.bolo_de_cenoura);
+                TextView textPrincipal = rootView.findViewById(R.id.profile_Card_text_NomeComida);
+                textPrincipal.setText(receita.element().getNome());
+                TextView textCategoria = rootView.findViewById(R.id.profile_Card_NomeCategoria);
+                textCategoria.setText(receita.element().getCategoria());
+                TextView textTime = rootView.findViewById(R.id.profile_Card_TempoPreparo);
+                textTime.setText(receita.element().getTempo());
+
                 CardView food = rootView.findViewById(R.id.profile_cardView);
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override

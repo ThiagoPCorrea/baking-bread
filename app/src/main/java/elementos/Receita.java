@@ -1,13 +1,19 @@
 package elementos;
 
+import android.media.Image;
+
 import java.util.ArrayList;
 
 public class Receita {
+
     private String Nome;
     ArrayList<String> Ingredientes = new ArrayList();
     @SuppressWarnings("FieldMayBeFinal")
     private int N_ingr = Ingredientes.size();
     private String ModoPrep;
+    private String categoria;
+    private String tempo;
+
 
     public String getNome() {
         return Nome;
@@ -41,5 +47,19 @@ public class Receita {
         this.ModoPrep = ModoPrep;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
 
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getTempo() {
+        return tempo;
+    }
+
+    public void setTempo(String tempo) {
+        this.tempo = tempo;
+    }
 }
