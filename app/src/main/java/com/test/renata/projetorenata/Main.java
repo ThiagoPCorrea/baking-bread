@@ -227,7 +227,7 @@ public class Main extends AppCompatActivity
     public static void UpdateCard(CircularLinkedList<Receita> receita, View rootView,boolean profile ){
         if(!profile){
             ImageView image = rootView.findViewById(R.id.Card_image);
-            image.setImageResource(R.drawable.bolo_de_cenoura);
+            image.setImageResource(receita.element().getImagem());
             TextView textPrincipal = rootView.findViewById(R.id.Card_text_NomeComida);
             textPrincipal.setText(receita.element().getNome());
             TextView textCategoria = rootView.findViewById(R.id.Card_NomeCategoria);
@@ -236,7 +236,7 @@ public class Main extends AppCompatActivity
             textTime.setText(receita.element().getTempo());
         }else{
             ImageView image = rootView.findViewById(R.id.profile_Card_image);
-            image.setImageResource(R.drawable.bolo_de_cenoura);
+            image.setImageResource(receita.element().getImagem());
             TextView textPrincipal = rootView.findViewById(R.id.profile_Card_text_NomeComida);
             textPrincipal.setText(receita.element().getNome());
             TextView textCategoria = rootView.findViewById(R.id.profile_Card_NomeCategoria);
@@ -279,6 +279,7 @@ public class Main extends AppCompatActivity
 
                 //receita = ListaInstance.init1();
                 UpdateCard(receitaprincipal,rootView,false);
+
                 CardView food = rootView.findViewById(R.id.cardView);
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override

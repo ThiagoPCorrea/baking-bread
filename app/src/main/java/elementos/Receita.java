@@ -13,6 +13,7 @@ public class Receita {
     private String ModoPrep;
     private String categoria;
     private String tempo;
+    int imagem;
 
 
     public String getNome() {
@@ -61,5 +62,13 @@ public class Receita {
 
     public void setTempo(String tempo) {
         this.tempo = tempo;
+    }
+
+    public int getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(int imagem) {
+        this.imagem = imagem;
     }
 }
