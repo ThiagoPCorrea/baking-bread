@@ -224,7 +224,7 @@ public class Main extends AppCompatActivity
         toggle.syncState();
     }
 
-    public static void UpdateCard(CircularLinkedList<Receita> receita, View rootView,boolean profile ){
+    public static void UpdateCard(CircularLinkedList<Receita> receita, View rootView,boolean profile){
         if(!profile){
             ImageView image = rootView.findViewById(R.id.Card_image);
             image.setImageResource(R.drawable.bolo_de_cenoura);
@@ -244,7 +244,7 @@ public class Main extends AppCompatActivity
             TextView textTime = rootView.findViewById(R.id.profile_Card_TempoPreparo);
             textTime.setText(receita.element().getTempo());
         }
-        
+
     }
 
 

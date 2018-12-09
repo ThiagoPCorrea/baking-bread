@@ -45,7 +45,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AvaliacaoActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NovaReceitaActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

@@ -60,4 +60,11 @@
     <string name="comentario_label">Deixe seu Comentario:</string>
     <string name="button_avaliar">Avaliar</string>
 
+    <!--Nova Receita Activity-->
+    <string name="nomereceita_label">Nome da Receita:</string>
+    <string name="foto_label">Foto:</string>
+    <string name="ingreditentes_label">Ingredientes:</string>
+    <string name="modopreparo_label">Modo de Preparo:</string>
+    <string name="button_novareceita">Adicionar Receita</string>
+
 </resources>
