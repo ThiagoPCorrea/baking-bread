@@ -261,14 +261,14 @@ public class Main extends AppCompatActivity
                 rightButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        receita.next(receita.element());
                     }
                 });
                 ImageButton leftButton = rootView.findViewById(R.id.leftCardbutton);
                 leftButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        receita.prev(receita.element());
                     }
                 });
                 return rootView;
@@ -297,14 +297,14 @@ public class Main extends AppCompatActivity
                 rightButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        receita.next(receita.element());
                     }
                 });
                 ImageButton leftButton = rootView.findViewById(R.id.leftCardbutton);
                 leftButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        receita.prev(receita.element());
                     }
                 });
                 return rootView;
@@ -332,14 +332,14 @@ public class Main extends AppCompatActivity
                 rightButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        receita.next(receita.element());
                     }
                 });
                 ImageButton leftButton = rootView.findViewById(R.id.leftCardbutton);
                 leftButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        receita.prev(receita.element());
                     }
                 });
                 return rootView;
@@ -367,14 +367,14 @@ public class Main extends AppCompatActivity
                 rightButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        receita.next(receita.element());
                     }
                 });
                 ImageButton leftButton = rootView.findViewById(R.id.leftCardbutton);
                 leftButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        receita.prev(receita.element());
                     }
                 });
                 return rootView;
@@ -451,6 +451,20 @@ public class Main extends AppCompatActivity
                     public void onClick(View v) {
                         Intent i = new Intent(MainContext,ComidaActivity.class);
                         startActivity(i);
+                    }
+                });
+                ImageButton rightButton = rootView.findViewById(R.id.rightCardbutton);
+                rightButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        receita.next(receita.element());
+                    }
+                });
+                ImageButton leftButton = rootView.findViewById(R.id.leftCardbutton);
+                leftButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        receita.prev(receita.element());
                     }
                 });
                 return rootView;
