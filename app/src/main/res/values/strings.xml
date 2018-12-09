@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProjetoRenata</string>
+    <string name="app_name">Baking Bread</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -54,5 +54,10 @@
 
     <!--Profile Tab-->
     <string name="tab_text_profile">Minhas Receitas</string>
+
+    <!--Avaliação Activity-->
+    <string name="avaliacao_label">Avalie a Receita:</string>
+    <string name="comentario_label">Deixe seu Comentario:</string>
+    <string name="button_avaliar">Avaliar</string>
 
 </resources>
