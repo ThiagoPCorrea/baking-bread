@@ -31,6 +31,7 @@
             android:id="@+id/comida_ingrediente"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:fontFamily="cursive"
             android:text="-> Massa:\n\n
 - 3 cenouras médias raladas\n\n
@@ -46,6 +47,7 @@
 - 1 xícara (chá) de leite\n\n"
             android:textColor="@color/lightorange"
             android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
             app:layout_constraintEnd_toEndOf="@+id/text_ingredientes_logo"
             app:layout_constraintStart_toStartOf="@+id/text_ingredientes_logo"
             app:layout_constraintTop_toBottomOf="@+id/text_ingredientes_logo" />
@@ -68,6 +70,8 @@
             android:id="@+id/comida_preparo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="cursive"
             android:text="-> Massa:\n\n
 - 1: Em um liquidificador, adicione a cenoura, os ovos e o óleo, depois misture\n\n
 - 2: Acrescente o açúcar e bata novamente por 5 minutos\n\n
@@ -79,7 +83,6 @@
 - 2: Leve a mistura ao fogo e continue misturando até obter uma consistência cremosa, depois despeje a calda por cima do bolo\n\n"
             android:textColor="@color/lightorange"
             android:textSize="22sp"
-            android:fontFamily="cursive"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView6"
             app:layout_constraintStart_toStartOf="@+id/textView6"
