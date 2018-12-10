@@ -33,8 +33,9 @@ public class FilterActivity extends AppCompatActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(FilterActivity.this,Main.class);
-                startActivity(i);
+//                Intent i = new Intent(FilterActivity.this,Main.class);
+//                startActivity(i);
+                finish();
             }
         });
         Button clean = findViewById(R.id.button_filter_limparFiltros);
