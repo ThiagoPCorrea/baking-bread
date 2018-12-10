@@ -23,7 +23,7 @@ public class ListaInstance {
         ing.add("Bolo");
         ing.add("Cenoura");
         receita.setCategoria("Doce");
-        receita.setTempo("2 horas");
+        receita.setTempo("1 hora e 20 min");
         receita.setIngredientes(ing);
         receita.setImagem(R.drawable.bolo_de_cenoura);
 
@@ -38,7 +38,7 @@ public class ListaInstance {
         ing.add("Sorvete");
         receita.setIngredientes(ing);
         receita.setCategoria("Doce");
-        receita.setTempo("2 horas");
+        receita.setTempo("1 hora e 45 min");
         receita.setImagem(R.drawable.bolo_de_sorvete);
 
         lista.add(receita);
@@ -76,7 +76,7 @@ public class ListaInstance {
         ing.add("Massa");
         receita.setIngredientes(ing);
         receita.setCategoria("Salgado");
-        receita.setTempo("2 horas");
+        receita.setTempo(" 50 min");
         receita.setImagem(R.drawable.coxinha);
 
         lista.add(receita);
@@ -90,7 +90,7 @@ public class ListaInstance {
         ing.add("Queijo");
         receita.setIngredientes(ing);
         receita.setCategoria("Salgado");
-        receita.setTempo("2 horas");
+        receita.setTempo("45 min");
         receita.setImagem(R.drawable.bolinha_de_queijo);
 
         lista.add(receita);
@@ -104,7 +104,7 @@ public class ListaInstance {
         ing.add("Carne");
         receita.setIngredientes(ing);
         receita.setCategoria("Salgado");
-        receita.setTempo("2 horas");
+        receita.setTempo("40 min");
         receita.setImagem(R.drawable.croquete_2);
 
         lista.add(receita);
@@ -125,7 +125,7 @@ public class ListaInstance {
         ing.add("Legumes");
         receita.setIngredientes(ing);
         receita.setCategoria("Salgado");
-        receita.setTempo("2 horas");
+        receita.setTempo("1 hora e 30 min");
         receita.setImagem(R.drawable.sopa);
 
         lista.add(receita);
@@ -140,7 +140,7 @@ public class ListaInstance {
         ing.add("motivos pra viver");
         receita.setIngredientes(ing);
         receita.setCategoria("Doce");
-        receita.setTempo("2 horas");
+        receita.setTempo("20 min");
         receita.setImagem(R.drawable.brigadeiro);
 
         lista.add(receita);
@@ -154,7 +154,7 @@ public class ListaInstance {
         ing.add("espirito italiano");
         receita.setIngredientes(ing);
         receita.setCategoria("Doce");
-        receita.setTempo("2 horas");
+        receita.setTempo("20 min");
         receita.setImagem(R.drawable.macarrao);
 
         lista.add(receita);
@@ -175,7 +175,7 @@ public class ListaInstance {
         ing.add("Branco");
         receita.setIngredientes(ing);
         receita.setCategoria("Doce");
-        receita.setTempo("2 horas");
+        receita.setTempo("1 hora");
         receita.setImagem(R.drawable.molho_branco);
 
         lista.add(receita);
@@ -189,7 +189,7 @@ public class ListaInstance {
         ing.add("Tomate");
         receita.setIngredientes(ing);
         receita.setCategoria("Doce");
-        receita.setTempo("2 horas");
+        receita.setTempo("1 hora");
         receita.setImagem(R.drawable.molho_de_tomate);
 
         lista.add(receita);
@@ -203,7 +203,7 @@ public class ListaInstance {
         ing.add("Bolonhesa");
         receita.setIngredientes(ing);
         receita.setCategoria("Doce");
-        receita.setTempo("2 horas");
+        receita.setTempo("1 hora e 30 min");
         receita.setImagem(R.drawable.molho_a_bolonhesa);
 
         lista.add(receita);
@@ -224,7 +224,7 @@ public class ListaInstance {
         ing.add("roll");
         receita.setIngredientes(ing);
         receita.setCategoria("Doce");
-        receita.setTempo("2 horas");
+        receita.setTempo(" 30 min");
         receita.setImagem(R.drawable.hot_roll);
 
         lista.add(receita);
@@ -238,7 +238,7 @@ public class ListaInstance {
         ing.add("Salmao");
         receita.setIngredientes(ing);
         receita.setCategoria("Doce");
-        receita.setTempo("2 horas");
+        receita.setTempo("20 min");
         receita.setImagem(R.drawable.temaki_de_salmao);
 
         lista.add(receita);
@@ -252,7 +252,7 @@ public class ListaInstance {
         ing.add("laranja");
         receita.setIngredientes(ing);
         receita.setCategoria("Doce");
-        receita.setTempo("2 horas");
+        receita.setTempo("5 min");
         receita.setImagem(R.drawable.suco_de_laranja);
 
         lista.add(receita);
