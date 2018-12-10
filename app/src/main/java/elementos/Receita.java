@@ -14,6 +14,7 @@ public class Receita {
     private String categoria;
     private String tempo;
     int imagem;
+    private String aux;
 
 
     public String getNome() {
@@ -70,5 +71,14 @@ public class Receita {
 
     public void setImagem(int imagem) {
         this.imagem = imagem;
+    }
+
+    public String getAllIngredientes()
+    {
+        for (String i:getIngredientes())
+        {
+            aux += i;
+        }
+        return aux;
     }
 }
