@@ -33,6 +33,7 @@ import elementos.Receita;
 
 
 import java.util.ArrayList;
+import java.util.zip.Inflater;
 
 import circList.CircularLinkedList;
 
@@ -46,6 +47,23 @@ public class Main extends AppCompatActivity
     private static CircularLinkedList<Receita> receitafavorita;
     private static CircularLinkedList<Receita> receitayour;
     private static Context MainContext;
+
+//    public static CircularLinkedList<Receita> getReceita(int valor){
+//        switch (valor){
+//            case 1:
+//                return receitaprincipal;
+//            case 2:
+//                return receitanew;
+//            case 3:
+//                return  receitarecomend;
+//            case 4:
+//                return receitafavorita;
+//            case 5:
+//                return receitayour;
+//            default:
+//                return null;
+//        }
+//    }
 
     //Activity_tab
     /**
@@ -158,6 +176,8 @@ public class Main extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent i = new Intent(Main.this,NovaReceitaActivity.class);
+            startActivity(i);
             return true;
         }
 
@@ -244,7 +264,6 @@ public class Main extends AppCompatActivity
             TextView textTime = rootView.findViewById(R.id.profile_Card_TempoPreparo);
             textTime.setText(receita.element().getTempo());
         }
-
     }
 
 
@@ -285,6 +304,7 @@ public class Main extends AppCompatActivity
                     @Override
                     public void onClick(View v) {
                         Intent i = new Intent(MainContext,ComidaActivity.class);
+                        ComidaActivity.setReceita(receitaprincipal);
                         startActivity(i);
                     }
                 });
@@ -317,8 +337,9 @@ public class Main extends AppCompatActivity
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //Intent i = new Intent(MainContext,ComidaActivity.class);
-                        //startActivity(i);
+                        Intent i = new Intent(MainContext,ComidaActivity.class);
+                        ComidaActivity.setReceita(receitanew);
+                        startActivity(i);
                     }
                 });
                 ImageButton rightButton = rootView.findViewById(R.id.rightCardbutton);
@@ -349,8 +370,9 @@ public class Main extends AppCompatActivity
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent(MainContext,FilterActivity.class);
-                        //startActivity(i);
+                        Intent i = new Intent(MainContext,ComidaActivity.class);
+                        ComidaActivity.setReceita(receitarecomend);
+                        startActivity(i);
                     }
                 });
                 ImageButton rightButton = rootView.findViewById(R.id.rightCardbutton);
@@ -381,8 +403,9 @@ public class Main extends AppCompatActivity
                 food.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent(MainContext,FilterActivity.class);
-                        //startActivity(i);
+                        Intent i = new Intent(MainContext,ComidaActivity.class);
+                        ComidaActivity.setReceita(receitafavorita);
+                        startActivity(i);
                     }
                 });
                 ImageButton rightButton = rootView.findViewById(R.id.rightCardbutton);
@@ -469,6 +492,7 @@ public class Main extends AppCompatActivity
                     @Override
                     public void onClick(View v) {
                         Intent i = new Intent(MainContext,ComidaActivity.class);
+                        ComidaActivity.setReceita(receitayour);
                         startActivity(i);
                     }
                 });

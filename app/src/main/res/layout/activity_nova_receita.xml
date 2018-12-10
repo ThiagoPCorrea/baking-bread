@@ -7,7 +7,7 @@
     tools:context=".NovaReceitaActivity"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:background="@color/cream"
-    tools:showIn="@layout/app_bar_novaReceita">
+    tools:showIn="@layout/app_bar_nova_receita">
 
     <ScrollView
         android:id="@+id/scrollView3"

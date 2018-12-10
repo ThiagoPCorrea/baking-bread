@@ -24,9 +24,10 @@
             app:toolbarId="@+id/toolbar">
 
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/comida_image"
+                android:layout_width="450dp"
+                android:layout_height="350dp"
+                android:layout_gravity="center|bottom"
                 app:srcCompat="@drawable/bolo_de_cenoura" />
 
             <android.support.v7.widget.Toolbar
