@@ -91,7 +91,7 @@ public class Receita {
                 aux += i;
                 aux += "\n";
             }
-
+            cont++;
         }
         return aux;
     }
