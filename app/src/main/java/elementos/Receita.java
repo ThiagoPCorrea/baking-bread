@@ -78,6 +78,7 @@ public class Receita {
         for (String i:getIngredientes())
         {
             aux += i;
+            aux += "\n";
         }
         return aux;
     }
