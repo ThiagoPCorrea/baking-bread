@@ -15,6 +15,7 @@ public class Receita {
     private String tempo;
     int imagem;
     private String aux;
+    private int cont=1;
 
 
     public String getNome() {
@@ -77,8 +78,20 @@ public class Receita {
     {
         for (String i:getIngredientes())
         {
-            aux += i;
-            aux += "\n";
+            if (cont==1)
+            {
+                aux = "1-";
+                aux += i;
+                aux+="\n";
+            }
+            else
+            {
+                aux +=cont;
+                aux +="-";
+                aux += i;
+                aux += "\n";
+            }
+
         }
         return aux;
     }
