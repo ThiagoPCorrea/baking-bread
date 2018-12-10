@@ -40,8 +40,10 @@ public class ComidaActivity extends AppCompatActivity {
         ImageView comida = findViewById(R.id.comida_image);
         TextView textIngredientes = findViewById(R.id.comida_ingrediente);
         TextView textPreparo = findViewById(R.id.comida_preparo);
+        Toolbar nome = findViewById(R.id.toolbarcomida);
         textIngredientes.setText("");
         textPreparo.setText("");
+        nome.setTitle(receita.element().getNome());
         comida.setImageResource(receita.element().getImagem());
         textIngredientes.setText(receita.element().getAllIngredientes());
         textPreparo.setText(receita.element().getModoPrep());

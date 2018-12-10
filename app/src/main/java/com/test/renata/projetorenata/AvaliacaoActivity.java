@@ -17,8 +17,9 @@ public class AvaliacaoActivity extends AppCompatActivity {
         avaliar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AvaliacaoActivity.this,ComidaActivity.class);
-                startActivity(i);
+//                Intent i = new Intent(AvaliacaoActivity.this,ComidaActivity.class);
+//                startActivity(i);
+                finish();
             }
         });
     }

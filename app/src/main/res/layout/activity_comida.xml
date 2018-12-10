@@ -31,7 +31,7 @@
                 app:srcCompat="@drawable/bolo_de_cenoura" />
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbarcomida"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"

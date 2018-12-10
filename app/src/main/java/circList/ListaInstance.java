@@ -153,7 +153,7 @@ public class ListaInstance {
         ing.add("Macarrao");
         ing.add("espirito italiano");
         receita.setIngredientes(ing);
-        receita.setCategoria("Doce");
+        receita.setCategoria("Massas");
         receita.setTempo("20 min");
         receita.setImagem(R.drawable.macarrao);
 
@@ -174,7 +174,7 @@ public class ListaInstance {
         ing.add("Molho");
         ing.add("Branco");
         receita.setIngredientes(ing);
-        receita.setCategoria("Doce");
+        receita.setCategoria("Molho");
         receita.setTempo("1 hora");
         receita.setImagem(R.drawable.molho_branco);
 
@@ -188,7 +188,7 @@ public class ListaInstance {
         ing.add("Molho");
         ing.add("Tomate");
         receita.setIngredientes(ing);
-        receita.setCategoria("Doce");
+        receita.setCategoria("Molho");
         receita.setTempo("1 hora");
         receita.setImagem(R.drawable.molho_de_tomate);
 
@@ -202,7 +202,7 @@ public class ListaInstance {
         ing.add("Molho");
         ing.add("Bolonhesa");
         receita.setIngredientes(ing);
-        receita.setCategoria("Doce");
+        receita.setCategoria("Molho");
         receita.setTempo("1 hora e 30 min");
         receita.setImagem(R.drawable.molho_a_bolonhesa);
 
@@ -223,8 +223,8 @@ public class ListaInstance {
         ing.add("hot");
         ing.add("roll");
         receita.setIngredientes(ing);
-        receita.setCategoria("Doce");
-        receita.setTempo(" 30 min");
+        receita.setCategoria("Japonesa");
+        receita.setTempo("30 min");
         receita.setImagem(R.drawable.hot_roll);
 
         lista.add(receita);
@@ -237,7 +237,7 @@ public class ListaInstance {
         ing.add("Temaki");
         ing.add("Salmao");
         receita.setIngredientes(ing);
-        receita.setCategoria("Doce");
+        receita.setCategoria("Japonesa");
         receita.setTempo("20 min");
         receita.setImagem(R.drawable.temaki_de_salmao);
 
@@ -251,7 +251,7 @@ public class ListaInstance {
         ing.add("suco");
         ing.add("laranja");
         receita.setIngredientes(ing);
-        receita.setCategoria("Doce");
+        receita.setCategoria("Suco");
         receita.setTempo("5 min");
         receita.setImagem(R.drawable.suco_de_laranja);
 
